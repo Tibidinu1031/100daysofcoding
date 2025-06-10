@@ -1,34 +1,21 @@
-f = open("high.score", "r")
-
-list = []
+import random
 
 while True:
-  contents = f.readline().strip()
+  print("HIGH SCORES")
+  print()
+  name = input("What is your name? ")
+  score = random.randint(1, 100000)
+  playAgain = input("Do you want to play again? (Y/N) ")
 
-  if contents == "":
+  f = open("high.score", "a+")
+  f.write(f"{name} {score}\n")
+  f.close()
+  
+  if playAgain.lower() == "n":
     break
-
-  contents = contents.split()
-  list.append(contents)
-
-  print(contents)
-
-print()
-
-
-if int(list[0][1]) > int(list[1][1]) and int(list[0][1]) > int(list[2][1]) and int(list[0][1]) > int(list[3][1]):
-  print(f'{list[0][0]} is the highest score of {list[0][1]}')
-elif int(list[1][1]) > int(list[0][1]) and int(list[1][1]) > int(list[2][1]) and int(list[1][1]) > int(list[3][1]):
-  print(f'{list[1][0]} is the highest score of {list[1][1]}')
-elif int(list[2][1]) > int(list[0][1]) and int(list[2][1]) > int(list[1][1]) and int(list[2][1]) > int(list[3][1]):
-  print(f'{list[2][0]} is the highest score of {list[2][1]}')
-elif int(list[3][1]) > int(list[0][1]) and int(list[3][1]) > int(list[1][1]) and int(list[3][1]) > int(list[2][1]):
-  print(f'{list[3][0]} is the highest score of {list[3][1]}')
-
+  elif playAgain.lower() == "y":
+    continue
   
 
-
-
-
-
-
+  
+  
