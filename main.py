@@ -1,18 +1,10 @@
-print("Let's get to know each other!")
-print("")
-yourName = input("What's your name? ")
-your_food = input("What about your favorite food? ")
-your_music = input("And your music? ")
-yourLocation = input("Finally, where do you live? ")
-print("")
-print("Here's the hightlight:")
-print("")
-print("Your name is: " + yourName)
-print("")
-print("Your favorite dish is: " + your_food)
-print("")
-print("Your fav music is: " + your_music)
-print("")
-print("And you live in: " + yourLocation)
-print("")
-print("Thanks for your time")
+import csv 
+
+total = 0.0
+
+with open("Day54Totals.csv") as file:
+  reader = csv.DictReader(file)
+  for row in reader:
+    total += float(row["Cost"]) * float(row["Quantity"])
+
+print(f"Total = {round(total, 2)}")
