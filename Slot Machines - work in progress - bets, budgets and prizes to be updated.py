@@ -11,9 +11,6 @@ hand = []
 cards = {"Rosie": ["♥️", "♦️"], "Neagra": ["♠️", "♣️"]}
 cardsDealt = []
 
-randomCard = random.choice(list(cards.values()))
-
-
 def prettyPrint():
     print("--------------------------------------")
     for index in range(5):
@@ -40,6 +37,7 @@ while True:
         
     start = input("Press SPACE to start\n> ")
     budget -= bet
+    randomChoice = ""
     prettyPrint()
 
     print(f"Remaining budget: {budget}")
@@ -54,18 +52,35 @@ while True:
                 index = 1
                 prize = bet * 10
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 10
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 10
@@ -78,18 +93,35 @@ while True:
                 index = 1
                 prize = bet * 5
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 5
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 5
@@ -102,18 +134,35 @@ while True:
                 index = 1
                 prize = bet * 3
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 3
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 3
@@ -129,18 +178,35 @@ while True:
                 index = 1
                 prize = bet * 10
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 10
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 10
@@ -153,18 +219,35 @@ while True:
                 index = 1
                 prize = bet * 5
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 5
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 5
@@ -177,18 +260,35 @@ while True:
                 index = 1
                 prize = bet * 3
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 3
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 3
@@ -203,18 +303,35 @@ while True:
                 index = 1
                 prize = bet * 10
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 10
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 10
@@ -227,18 +344,35 @@ while True:
                 index = 1
                 prize = bet * 5
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 5
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 5
@@ -251,18 +385,35 @@ while True:
                 index = 1
                 prize = bet * 3
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 3
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 3
@@ -277,18 +428,35 @@ while True:
                 index = 1
                 prize = bet * 10
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 10
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 10
@@ -301,18 +469,35 @@ while True:
                 index = 1
                 prize = bet * 5
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 5
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 5
@@ -325,18 +510,35 @@ while True:
                 index = 1
                 prize = bet * 3
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 3
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 3
@@ -351,18 +553,35 @@ while True:
                 index = 1
                 prize = bet * 10
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 10
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 10
@@ -375,18 +594,35 @@ while True:
                 index = 1
                 prize = bet * 5
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 5
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 5
@@ -399,18 +635,35 @@ while True:
                 index = 1
                 prize = bet * 3
                 print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
                 rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
-                randomCard = random.choice(list(cards.values()))
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
                 print(randomCard)
                 cardsDealt.append(randomCard)
-                if rosieNeagra == randomCard:
+                if randomChoice == randomCard:
                     prize *= 2
                     index += 1
-                    if index >= 5:
+                    if index > 5:
+                        index = 1
                         break
                 else:
                     prize = bet * 3
                     print("Prize lost")
+                    index = 1
                     break
         else:
             bet *= 3
@@ -422,67 +675,339 @@ while True:
     if hand[0] == "🍒" or hand[5] == "🍒" or hand[10] == "🍒":
         if hand[0] == hand[1]:
             print("x2")
-            doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 2
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 2
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 2
+            print(f"Collected {bet}")
 
         if hand[5] == hand[6]:
             print("x2")
-            doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 2
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 2
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 2
+            print(f"Collected {bet}")
 
         if hand[10] == hand[11]:
             print("x2")
-            doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 2
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 2
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 2
+            print(f"Collected {bet}")
 
         if hand[0] == hand[6]:
             print("x2")
-            doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 2
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 2
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 2
+            print(f"Collected {bet}")
 
         if hand[10] == hand[6]:
             print("x2")
-            doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 2
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 2
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 2
+            print(f"Collected {bet}")
     # up until here
 
     # special rules for stars:
     if hand.count("⭐") == 3:
         print("x3")
-        doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 3
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 3
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 3
+            print(f"Collected {bet}")
     if hand.count("⭐") == 4:
         print("x4")
-        doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 4
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 4
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
             bet *= 4
+            print(f"Collected {bet}")
     if hand.count("⭐") == 5:
         print("x5")
-        doubleDown = input("Try to double the prize or lose it all?\nD. Double down\nC. Collect prize\n> ")
+        doubleDown = input("D. Double down\nC. Collect prize\n> ")
         if doubleDown.lower() == "d":
-            print("Moara")
+            while True:
+                index = 1
+                prize = bet * 5
+                print(f"Moara {index}")
+                try:
+                    print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                except:
+                    if len(cardsDealt) == 0:
+                        print("No cards have been picked")
+                    elif len(cardsDealt) == 1:
+                        print(cardsDealt[-1])
+                    elif len(cardsDealt[-2]) == 2:
+                        print(cardsDealt[-1], cardsDealt[-2])
+                    else:
+                        print(cardsDealt[-1], cardsDealt[-2], cardsDealt[-3])
+                rosieNeagra = input("R. Rosie\nN. Neagra\n> ")
+                if rosieNeagra.lower() == 'r':
+                    randomChoice = "Rosie"
+                elif rosieNeagra.lower() == 'n':
+                    randomChoice == "Neagra"
+                randomCard = random.choice(list(cards.keys()))
+                print(randomCard)
+                cardsDealt.append(randomCard)
+                if randomChoice == randomCard:
+                    prize *= 2
+                    index += 1
+                    if index > 5:
+                        index = 1
+                        break
+                else:
+                    prize = bet * 5
+                    print("Prize lost")
+                    index = 1
+                    break
         else:
-            bet *= 3
+            bet *= 5
+            print(f"Collected {bet}")
     # up until here
 
     hand = []
