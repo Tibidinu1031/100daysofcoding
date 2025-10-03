@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+   <h1>Welcome to the Are You a Robot Page!!!</h1>
+   <h3>Please take the mini test:</h3>
+   <form action = '/ruarobot' method="POST">
+        <p>
+            Are you made of metal or 100% software? 
+            <input type="radio" id = "yes" name="metal" value="yes" checked>
+            <label for="yes">Yes</label>
+
+            <input type="radio" id = "no" name="metal" value="no">
+            <label for="no">No</label>
+        </p>
+
+        <p>
+            What's infinity + 1?
+            <input type="text" name="infinity" required>
+        </p>
+
+        <p>
+            Which is your favorite food?
+            <select name="menu" id="menu">
+                <option value="Human Food">Human Food</option>
+                <option value="Oil">Oil</option>
+                <option value="Data">Data</option>
+            </select>
+        </p>
+
+        <button type="submit">Me not a robot!</button>
+    </form>
+</body>
+</html>
