@@ -1,22 +1,28 @@
-import requests, json, os
+import requests
+from bs4 import BeautifulSoup
 
-result = requests.get("https://randomuser.me/api/")
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
 
-data = result.json()
+url = "https://news.ycombinator.com/"
+response = requests.get(url, headers=headers)
+soup = BeautifulSoup(response.text, "html.parser")
 
-#print(json.dumps(data, indent=3))
+# Grab all titleline spans
+titlelines = soup.find_all("span", class_="titleline")
 
-name = f'{data['results'][0]['name']['first']} {data['results'][0]['name']['last']}'
+matches = 0
+for span in titlelines:
+    text = span.get_text(strip=True).lower()
+    if "python" in text or "replit" in text or "Show HN" in text:
+        matches += 1
+        # Try to get the link if it exists
+        a_tag = span.find("a")
+        href = a_tag.get("href", "No link") if a_tag else "No link"
+        print(text)
+        print(href)
+        print("\n" + "-"*70 + "\n")
 
-image = data['results'][0]['picture']['large']
-
-picture = requests.get(image)
-
-for person in data['results']:   
-    f = open(f'poze/poza.jpg', 'wb')
-    f.write(picture.content)
-    index += 1
-    f.close()
-    
-
-print(image)
+if matches == 0:
+    print("No matching titles found.")
